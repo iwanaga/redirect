@@ -7,12 +7,12 @@ version = "0.1.0"
 
 [[component]]
 id = "api"
-source = "api/target/wasm32-wasi/release/api.wasm"
+source = "api/target/wasm32-wasip1/release/api.wasm"
 key_value_stores = ["default"]
 [component.trigger]
 route = "/api/..."
 [component.build]
-command = "cargo build --target wasm32-wasi --release"
+command = "cargo build --target wasm32-wasip1 --release"
 workdir = "api"
 watch = [ "Cargo.toml", "src/lib.rs" ]
 
@@ -25,12 +25,12 @@ route = "/admin/..."
 
 [[component]]
 id = "redirect"
-source = "redirect/target/wasm32-wasi/release/redirect.wasm"
+source = "redirect/target/wasm32-wasip1/release/redirect.wasm"
 key_value_stores = ["default"]
 [component.trigger]
 route = "/..."
 [component.build]
-command = "cargo build --target wasm32-wasi --release"
+command = "cargo build --target wasm32-wasip1 --release"
 workdir = "redirect"
 watch = [ "Cargo.toml", "src/lib.rs" ]
 
